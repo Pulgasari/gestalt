@@ -59,6 +59,9 @@ import '@gestalt/prototypes'
 
 ```js
 element.gestalt.typo = '"Rubik Sans" uppercase italic 20px justify';
+element.gestalt['typo']('"Rubik Sans" uppercase italic 20px justify');
+element.gestalt['typo']('Rubik Sans', 'uppercase', 'italic', '20px', 'justify');
+element.gestalt['typo']('Rubik Sans', 'uppercase', 'italic', [20, 'px'], 'justify');
 ```
 
 on the global `gestalt` namespace one could set the base ...
