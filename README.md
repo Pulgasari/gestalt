@@ -61,6 +61,19 @@ import '@gestalt/prototypes'
 element.gestalt.typo = '"Rubik Sans" uppercase italic 20px justify';
 ```
 
+on the global `gestalt` namespace one could set the base ...
+
+```js
+gestalt.typo = 'Texturina'; // sets base font
+gestalt.typo.headings = '"Rubik Sans" 900-400'; // sets font on <h1> ti <h6> elements
+```
+
+additionally the global `gestalt` object provides some extra methods:
+
+```js
+gestalt.of('.sidebar .items').typo = 'italic';
+```
+
 #
 
 ## a11y
