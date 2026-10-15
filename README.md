@@ -11,6 +11,10 @@ weitere features:
 
 **gestalt** entstand aus dem umstand heraus, dass css zwar sehr vielseitig ist, aber gleichzeitig auch schnell messy wird. und alle mir bekannten tools lösen die probleme, die ich im umgang mit css habe, nur teilweise.
 
+## in der praxis ...
+
+... fungiert **gestalt** als configurator und controller von css.
+
 # API sketch
 
 ## css
