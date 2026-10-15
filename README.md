@@ -83,6 +83,14 @@ zombie
 ## colors
 
 ## flow
+```
+grid 10
+grid 10|3
+grid 200px auto-fit
+flex col
+flex row wrap
+masonry
+```
 
 ## fx
 ```
@@ -103,10 +111,19 @@ pattern 'dots' 20px 45deg
 ```
 
 ## typo
+```
+default
+uppercase
+'Rubik Sans' bold uppercase
+google('Texturina') 200 italic
+```
 
 # packages
 
 ```
 @gestalt/css
+@gestalt/js
 @gestalt/observer
+@gestalt/processor
+@gestalt/server
 ```
