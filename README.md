@@ -7,9 +7,29 @@ erweiterbar via:
 weitere features:
 - erweitern via definition eigener shorthands
 
+# about
+
+**gestalt** entstand aus dem umstand heraus, dass css zwar sehr vielseitig ist, aber gleichzeitig auch schnell messy wird. und alle mir bekannten tools lösen die probleme, die ich im umgang mit css habe, nur teilweise.
+
 # API sketch
 
 ## css
+
+```css
+:root {
+  --gestalt-a11y     : reduced-motion high-contrast;
+  --gestalt-geometry : soft;
+  --gestalt-palette  : zombie;
+}
+```
+
+```css
+@gestalt-config {
+  a11y     : reduced-motion high-contrast;
+  geometry : soft;
+  palette  : zombie;
+}
+```
 
 ## html + htx
 
@@ -27,7 +47,7 @@ weitere features:
 
 ## js
 
-the intended way is to use it as prototypes extension so there is a `.gestalt` namespace under every dom-element.
+the intended way is to use it as prototypes extension so there is a `.gestalt` namespace under every dom-element/node.
 
 ```js
 import '@gestalt/prototypes'
