@@ -64,6 +64,18 @@ pill
 
 ## palette
 
+- builtin palettes
+- any css named color
+- any css color
+- and some optional modifiers
+
+```md
+# builtin palettes
+classic
+oled
+zombie
+```
+
 ## skin
 
 # groups | shorthands
@@ -78,8 +90,17 @@ glitch
 ```
 
 ## shadow
+```
+on
+off
+fg[0 0 5px black]
+```
 
 ## surface
+```
+black
+pattern 'dots' 20px 45deg
+```
 
 ## typo
 
