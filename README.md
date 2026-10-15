@@ -4,11 +4,26 @@ erweiterbar via:
 - plugins
 - presets
 
-# sketch
+weitere features:
+- erweitern via definition eigener shorthands
+
+# API sketch
 
 ## css
 
-## html
+## html + htx
+
+```html
+<app-root
+  a11y='high-contrast reduced-motion'
+  density=''
+  geometry=''
+  palette='zombie'>
+  skin=''
+>
+  ...
+</app-root>
+```
 
 ## js
 
@@ -22,7 +37,36 @@ import '@gestalt/prototypes'
 element.gestalt.typo = '"Rubik Sans" uppercase italic 20px justify';
 ```
 
-# topics
+#
+
+## a11y
+
+## density
+
+## geometry
+
+```md
+# standard tokens
+sharp
+soft
+rounded
+pill
+
+# dynamic
+10px
+10%
+1rem
+10px auto
+10px auto 0.1
+```
+
+## layout
+
+## palette
+
+## skin
+
+# groups | shorthands
 
 ## colors
 
