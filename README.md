@@ -160,9 +160,20 @@ google('Texturina') 200 italic
 
 # packages
 
+| package             | dir                                       | what |
+|---------------------|-------------------------------------------|------|
+| `@gestalt/core`     | [packages/core](packages/core)           | the controller: palette, mode, density, geometry, look, layout, skin |
+| `@gestalt/css`      | [packages/css](packages/css)             | reset, functions, tokens, palettes, layouts, skins, animations |
+| `@gestalt/filters`  | [packages/filters](packages/filters)     | svg, css, canvas and webgl filters |
+| `@gestalt/patterns` | [packages/patterns](packages/patterns)   | svg patterns |
+| `@gestalt/webfonts` | [packages/webfonts](packages/webfonts)   | fonts by name, google fonts |
+
+formerly `@aufbau/gestalt`, `@aufbau/css`, `@aufbau/filters`, `@aufbau/patterns` and
+`@aufbau/webfonts`.
+
+planned, from the sketch above:
+
 ```
-@gestalt/css
-@gestalt/js
 @gestalt/observer
 @gestalt/processor
 @gestalt/server

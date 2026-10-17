@@ -1,0 +1,16 @@
+{
+  "name": "@gestalt/filters",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "./index.js",
+  "module": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./core": "./core.js",
+    "./canvas": "./canvas.js",
+    "./webgl": "./webgl.js",
+    "./pipeline": "./pipeline.js",
+    "./*": "./lib/*.js"
+  },
+  "license": "MIT"
+}

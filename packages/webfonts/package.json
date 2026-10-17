@@ -1,0 +1,8 @@
+{
+  "name": "@gestalt/webfonts",
+  "type": "module",
+  "exports": {
+    "."        : "./index.js",
+    "./google" : "./google.js"
+  }
+}
