@@ -13,7 +13,7 @@ weitere features:
 
 ## in der praxis ...
 
-... fungiert **gestalt** als configurator und controller von css.
+... fungiert **gestalt** als configurator und controller für css (und svg).
 
 # API sketch
 
