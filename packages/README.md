@@ -1,5 +1,9 @@
 # gestalt :: packages
 
+| package            |                  | status |
+|--------------------|------------------|--------|
+| `@gestalt/gestalt` | [`dir`](gestalt) | v0     |
+
 ## libraries
 
 | package             |                   | status |
@@ -9,8 +13,5 @@
 | `@gestalt/patterns` | [`dir`](patterns) | v0     |
 | `@gestalt/webfonts` | [`dir`](webfonts) | v0     |
 
-### runtime
 
-| package            |                  | status |
-|--------------------|------------------|--------|
-| `@gestalt/runtime` | [`dir`](runtime) | v0     |
+
