@@ -10,7 +10,7 @@ const off = trigger(button, 'click', 'jump');
 reveal('.card', 'slide', { from: 'bottom' });
 */
 
-import getElement from '@domina/methods/getElement.js';
+import getElement from '@domina/verbs/getElement.js';
 
 const PREFIX = 'data-animate';
 

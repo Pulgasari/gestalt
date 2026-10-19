@@ -10,7 +10,7 @@
   },
   "peerDependencies": {
     "@domina/element": "^0.1.0",
-    "@domina/methods": "*"
+    "@domina/verbs": "*"
   },
   "license": "MIT"
 }

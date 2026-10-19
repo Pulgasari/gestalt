@@ -10,11 +10,11 @@ const off = trigger(button, 'click', 'jump');
 reveal('.card', 'slide', { from: 'bottom' });
 */
 
-import forceReflow       from '@domina/methods/forceReflow.js';
-import onEvent           from '@domina/methods/onEvent.js';
-import resolveElements   from '@domina/methods/resolveElements.js';
-import setData           from '@domina/methods/setData.js';
-import waitForAnimations from '@domina/methods/waitForAnimations.js';
+import forceReflow       from '@domina/verbs/forceReflow.js';
+import onEvent           from '@domina/verbs/onEvent.js';
+import resolveElements   from '@domina/verbs/resolveElements.js';
+import setData           from '@domina/verbs/setData.js';
+import waitForAnimations from '@domina/verbs/waitForAnimations.js';
 import { observe }       from '@domina/observer';
 
 // the parameters animations.css reads, as option names. data-animate-<key>
