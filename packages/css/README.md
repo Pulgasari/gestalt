@@ -46,3 +46,7 @@ color: --darker(var(--accent));
 ```
 
 parameters default to the tokens (`--bg`, `--fg`, `--accent`, `--unit`, `--ratio`, …), each with a fallback of its own, so the functions work before `tokens.css` is there and follow a theme once it is.
+
+## palettes.css
+
+## reset.css
