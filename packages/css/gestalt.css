@@ -5,8 +5,8 @@
 /*////// 2. IMPORTS //////*/
 @import url('./functions.css');
 @import url('./reset.css') layer(aufbau.reset);
-@import url('./animate/functions.css');
 @import url('./palettes.css');
+@import url('./animate/functions.css');
 @import url('./animate/keyframes.css');
 @import url('./animate/animations.css');
 @import url('./layouts/landing.css');
