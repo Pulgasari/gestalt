@@ -1,18 +1,17 @@
 # @gestalt/css
 
-the css of gestalt, no javascript (that is [`@gestalt/core`](../core)).
+the css of gestalt.
 
 ```md
-aufbau.css      the entry: layers, functions, reset and the gestalt sheets
 functions.css   the custom functions, functions/*.css
 reset.css
 gestalt.css     the axes as tokens (palette, scheme, density, geometry …)
 palettes.css    the palette presets
 themes.css
-animate/        functions, keyframes, animations
-engine/         flow, space, typo
-layouts/        landing, mobile-basic, three-panels
-skins/          andromeda, monochrome
+animate/
+engine/
+layouts/
+skins/
 ```
 
 the entry and the layer names (`aufbau.reset`, `aufbau.tokens`, …) keep their aufbau names for
@@ -46,3 +45,7 @@ color: --darker(var(--accent));
 ```
 
 parameters default to the tokens (`--bg`, `--fg`, `--accent`, `--unit`, `--ratio`, …), each with a fallback of its own, so the functions work before `tokens.css` is there and follow a theme once it is.
+
+## palettes.css
+
+## reset.css

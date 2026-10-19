@@ -27,6 +27,19 @@ weitere features:
 }
 ```
 
+was nich über pures css machbar ist, wird mit pseudo-css geregelt;
+
+```css
+div {
+  gestalt-filter: glitch-live animate[true] speed[2s];
+  gestalt-pattern: dots;
+  gestalt-webfont: Texturina;
+}
+```
+
+
+unnötig?
+
 ```css
 @gestalt-config {
   a11y     : reduced-motion high-contrast;
@@ -59,9 +72,6 @@ import '@gestalt/prototypes'
 
 ```js
 element.gestalt.typo = '"Rubik Sans" uppercase italic 20px justify';
-element.gestalt['typo']('"Rubik Sans" uppercase italic 20px justify');
-element.gestalt['typo']('Rubik Sans', 'uppercase', 'italic', '20px', 'justify');
-element.gestalt['typo']('Rubik Sans', 'uppercase', 'italic', [20, 'px'], 'justify');
 ```
 
 on the global `gestalt` namespace one could set the base ...
@@ -118,45 +128,7 @@ zombie
 
 ## skin
 
-# groups | shorthands
 
-## colors
-
-## flow
-```
-grid 10
-grid 10|3
-grid 200px auto-fit
-flex col
-flex row wrap
-masonry
-```
-
-## fx
-```
-glitch
-```
-
-## shadow
-```
-on
-off
-fg[0 0 5px black]
-```
-
-## surface
-```
-black
-pattern 'dots' 20px 45deg
-```
-
-## typo
-```
-default
-uppercase
-'Rubik Sans' bold uppercase
-google('Texturina') 200 italic
-```
 
 # packages
 
