@@ -31,7 +31,7 @@ was nich über pures css machbar ist, wird mit pseudo-css geregelt;
 
 ```css
 div {
-  gestalt-filter: glitch-live animate-true speed[2s];
+  gestalt-filter: glitch-live animate[true] speed[2s];
   gestalt-pattern: dots;
 }
 ```
