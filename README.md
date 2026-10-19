@@ -33,6 +33,7 @@ was nich über pures css machbar ist, wird mit pseudo-css geregelt;
 div {
   gestalt-filter: glitch-live animate[true] speed[2s];
   gestalt-pattern: dots;
+  gestalt-webfont: Texturina;
 }
 ```
 
