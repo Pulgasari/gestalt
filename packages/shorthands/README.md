@@ -17,7 +17,7 @@ gestalt-typo
 gestalt-vfx
 ```
 
-2. deren content landet dann beim selector als attribut am element und wird dann zum teil durch pures css gehandlet (siehe `@gestalt/css/shorthands.css`), ein teil muss aber mithilfe von css verarbeitet werden.
+2. deren content landet dann beim selector als attribut am element und wird dann zum teil durch pures css gehandlet (siehe `@gestalt/css/shorthands.css`), ein teil muss aber mithilfe von js verarbeitet werden.
 - parsen
 - als sub-attribute einfügen
 - css kann diese dann mit `attr()` verarbeiten
