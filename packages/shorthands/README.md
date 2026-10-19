@@ -22,7 +22,8 @@ gestalt-vfx
 - als sub-attribute einfügen
 - css kann diese dann mit `attr()` verarbeiten
 
-# API sketch
+---
+
 # groups | shorthands
 
 ## colors
