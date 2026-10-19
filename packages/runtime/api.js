@@ -23,7 +23,7 @@ class SurfaceGestalter extends Gestalter {
 }
 
 class    TypoGestalter extends Gestalter {
-  ##namespace = 'typo';
+  #namespace = 'typo';
 }
 
 function setGestaltAttribute () {}
