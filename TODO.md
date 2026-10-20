@@ -30,7 +30,7 @@ damit sollte dann das grundsätzlich schon funktionieren:
   palette='zombie'
   skin=''
 >
-```h
+```
 
 ## 2.
 
