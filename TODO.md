@@ -6,6 +6,10 @@ Ich will nun zunächst erstmal die einfachen umsetzen.
 
 ## 1. Die CSS-Files
 
+Wird als einzelne Datei eingebunden.
+
+
+
 ```css
 @import url('https://code.pulgasari.dev/gestalt/packages/css/gestalt.css');
 ```
@@ -45,3 +49,9 @@ element.gestalt.typo = '"Rubik Sans" uppercase italic 20px justify';
 ## 3. filters, patterns, webfonts
 
 die 3 packages/APIs sind von `@aufbau` hierher gewandert. funktionieren grundsätzlich.
+
+---
+
+
+
+- [ ] Für `@gestalt/css` könnten wir im Repo noch ne GH-Action/Workflow einrichten, dass ein Script die CSS-Files bündelt und eine einzelne minifizierte Version in `packages/css/gestalt.min.css` ablegt. Ich hab keine Lust das immer manuell zu starten, also sollte es automatisch passieren. Falls möglich aber debounced, sodass es das nur 5 bis 10min seit der letzten Änderung ausführt an einer der CSS-Files. Die Liste der zu bündelnden Files sollte nich automatisch sein, sondern aus derv `repo.config.js` geholt werden. Das Script selbst mit iwo in `.github` liegen.
