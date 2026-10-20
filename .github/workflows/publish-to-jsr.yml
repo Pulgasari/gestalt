@@ -34,5 +34,5 @@ jobs:
           deno-version: v2.x
 
       - name: Publish package
-        working-directory: ${{ inputs.package }}
+        working-directory: packages/${{ inputs.package }}
         run: deno publish ${{ inputs.dry_run && '--dry-run' || '' }}

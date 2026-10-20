@@ -1,8 +1,9 @@
 # @gestalt/webfonts — handpicked collection
 #
 # one google fonts family name per line. this is the single source of truth:
-# `npm run generate:webfonts` fetches each family's metadata from the google/fonts
-# repo, rebuilds data.js, and downloads the font files into files/<id>/.
+# on every push that changes this file, ci (.github/workflows/webfonts.yml) fetches each
+# family's metadata from the google/fonts repo, rebuilds data.js and downloads the font
+# files into files/. by hand: `node .github/scripts/webfonts.mjs`.
 #
 # blank lines and lines starting with # are ignored. case/spacing are normalized, so
 # "roboto flex" resolves the same as "Roboto Flex".
