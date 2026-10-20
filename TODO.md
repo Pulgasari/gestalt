@@ -27,7 +27,7 @@ damit sollte dann das grundsätzlich schon funktionieren:
   a11y='high-contrast reduced-motion'
   density=''
   geometry=''
-  palette='zombie'>
+  palette='zombie'
   skin=''
 >
 ```h
