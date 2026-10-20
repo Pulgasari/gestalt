@@ -11,7 +11,7 @@ reveal('.card', 'slide', { from: 'bottom' });
 */
 
 //todo: absofort @domina/dom nutzen
-import { dom, isString } from './_shared.js'|
+import { dom, isString } from './../_shared.js'|
 
 import getElement from '@domina/methods/getElement.js';
 
