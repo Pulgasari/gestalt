@@ -14,6 +14,24 @@ Ich will nun zunächst erstmal die einfachen umsetzen.
 <link rel='stylesheet' href='https://code.pulgasari.dev/gestalt/packages/css/gestalt.css' />
 ```
 
+einbinden bringt:
+- `reset.css`
+- `palettes.css`
+- utils: custom functions
+- erster teil zum funktionieren der shorthands
+
+damit sollte dann das grundsätzlich schon funktionieren:
+
+```html
+<html
+  a11y='high-contrast reduced-motion'
+  density=''
+  geometry=''
+  palette='zombie'>
+  skin=''
+>
+```h
+
 ## 2.
 
 ```js
