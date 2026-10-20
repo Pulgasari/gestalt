@@ -1,0 +1,38 @@
+name: Publish @gestalt-Package to JSR
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: "package to publish"
+        required: true
+        type: choice
+        options:
+          - css
+          - filters
+          - gestalt
+          - patterns
+          - webfonts
+      dry_run:
+        description: "Only check, publish nothing"
+        type: boolean
+        default: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write # OIDC token JSR uses for auth + provenance
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Publish package
+        working-directory: ${{ inputs.package }}
+        run: deno publish ${{ inputs.dry_run && '--dry-run' || '' }}
