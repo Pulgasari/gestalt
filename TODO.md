@@ -41,3 +41,7 @@ element.gestalt.typo = '"Rubik Sans" uppercase italic 20px justify';
 ```html
 <div gestalt='typo: bold uppercase;' />
 ```
+
+## 3. filters, patterns, webfonts
+
+die 3 packages/APIs sind von `@aufbau` hierher gewandert. funktionieren grundsätzlich.
