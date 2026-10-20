@@ -2,7 +2,9 @@
 
 gestalt besteht auch wieder aus mehreren packages und APIs — teilweise sinds nur verschiedene Ansätze, wo sich dann zeigen soll, was in derPraxis taugt, teilweise aber auch bewusst multiple Wege.
 
-Ich will nun zunächst erstmal die einfachen umsetzen.
+Ich will nun zunächst erstmal die einfachen teile umsetzen.
+
+p.s. das repo muss echt mal aufgeräumt werden. überall skizzen in md-, js- und css-files usw
 
 ## 1. Die CSS-Files
 
