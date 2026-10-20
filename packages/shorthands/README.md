@@ -22,6 +22,11 @@ gestalt-vfx
 - als sub-attribute einfügen
 - css kann diese dann mit `attr()` verarbeiten
 
+ABER mittlerweile glaube ich fast, dass es aufgrund der ubgmaublichen redundanz von css fast besser wäre via  js zu regeln, zumal es js ja sowieso brauchen wird.
+- 1. observer erfasst `gestalt`-attribute an elementen sowie `gestalt-*`-rules in `<style>`-elementen
+2. gibt deren content und context an parser, der die dann zerlegt usw
+   
+
 ---
 
 # groups | shorthands
