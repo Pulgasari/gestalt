@@ -9,7 +9,7 @@ two ways to the same table, until one of them proves itself:
 (1) container queries on body, for the page.
     gestalt.palettes() reads the preset names off them
 
-(2) --palette-color() on any [data-palette] below the root,
+(2) --palette-color() on any [palette] / [data-palette] below the root,
     a palette for one area of the page. 
     a container query asks the parent,
     a function is evaluated on the element itself.
@@ -157,7 +157,7 @@ body {
    
 }
 
-body [data-palette] {
+body :is([palette], [data-palette]) {
   --palette   : attr(data-palette type(<color> | <custom-ident>), zombie);
 
   --color-bg  : --palette-color(var(--palette), bg);
@@ -168,3 +168,5 @@ body [data-palette] {
   --fg        : var(--color-fg);
   --ink       : var(--color-ink);
 }
+
+body [palette] { --palette : attr(palette type(<color> | <custom-ident>), zombie); }

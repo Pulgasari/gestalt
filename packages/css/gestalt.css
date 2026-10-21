@@ -9,7 +9,7 @@
 @import url('./animate/functions.css');
 @import url('./animate/keyframes.css');
 @import url('./animate/animations.css');
-@import url('./layouts/landing.css');
+@import url('./shorthands/typo.css') layer(aufbau.utilities);
 
 /*
 document.body.style.setProperty('--bg', 'var(--color-bg)');
@@ -66,32 +66,77 @@ the colors of the palette are --color-bg, --color-fg, --color-ink, read those.
 
 /*///////////////// ... /////////////////*/
 
+/*//////////// AXES AS ATTRIBUTES ////////////*/
+
+/*
+every axis can be set as an attribute, plain or with data-:
+
+  <html palette='zombie' geometry='round' scheme='dark' a11y='reduced-motion high-contrast'>
+
+closed keyword sets (scheme, geometry, density) go through attribute selectors: every
+browser, and an unknown value simply matches nothing. open values (palette, skin: a preset
+name or any color) need attr() with type(), chromium only so far, so it sits in @supports.
+both can address the same axis: the selector first, attr() after it overrides where it
+works. for a closed set that would only repeat the selector, so each axis uses one.
+a11y is a token list, attr() cannot test a token in it, so ~= selectors.
+*/
+
 :root {
-  /* a11y */
   --a11y-contrast : off;
   --a11y-motion   : off;
 
-  /* gestalt */
   --density  : normal;
   --geometry : soft;
   --palette  : zombie;
   --scheme   : auto;
   --skin     : monochrome;
-
-  &[data-palette] { --palette : attr(data-palette type(<color> | <custom-ident>), zombie); }
-  &[data-skin]    { --skin    : attr(data-skin    type(<custom-ident>), monochrome); }
 }
 
-[data-density]  { --density  : attr(data-density  type(compact | normal | comfortable | touch), normal); }
-[data-geometry] { --geometry : attr(data-geometry type(sharp | soft | round | pill), soft); }
-[data-scheme]   { --scheme   : attr(data-scheme   type(auto | light | dark), auto); }
+:is([density='compact'],     [data-density='compact'])     { --density: compact; }
+:is([density='normal'],      [data-density='normal'])      { --density: normal; }
+:is([density='comfortable'], [data-density='comfortable']) { --density: comfortable; }
+:is([density='touch'],       [data-density='touch'])       { --density: touch; }
 
-:root, [data-scheme] {
+:is([geometry='sharp'], [data-geometry='sharp']) { --geometry: sharp; }
+:is([geometry='soft'],  [data-geometry='soft'])  { --geometry: soft; }
+:is([geometry='round'], [data-geometry='round']) { --geometry: round; }
+:is([geometry='pill'],  [data-geometry='pill'])  { --geometry: pill; }
+
+:is([scheme='auto'],  [data-scheme='auto'])  { --scheme: auto; }
+:is([scheme='light'], [data-scheme='light']) { --scheme: light; }
+:is([scheme='dark'],  [data-scheme='dark'])  { --scheme: dark; }
+
+@supports (width: attr(x type(*))) {
+  :root[palette]      { --palette : attr(palette      type(<color> | <custom-ident>), zombie); }
+  :root[data-palette] { --palette : attr(data-palette type(<color> | <custom-ident>), zombie); }
+  :root[skin]         { --skin    : attr(skin         type(<custom-ident>), monochrome); }
+  :root[data-skin]    { --skin    : attr(data-skin    type(<custom-ident>), monochrome); }
+}
+
+:root, :is([scheme], [data-scheme]) {
   color-scheme : if(
-    style(--scheme: light) : light; 
-    style(--scheme: dark)  : dark; 
+    style(--scheme: light) : light;
+    style(--scheme: dark)  : dark;
     else                   : light dark
   );
+}
+
+/*//////////// A11Y ////////////*/
+
+/* the user's system settings switch them on, the attribute switches them on for the page */
+@media (prefers-reduced-motion: reduce) { :root { --a11y-motion: on; } }
+@media (prefers-contrast: more)         { :root { --a11y-contrast: on; } }
+
+:is([a11y~='reduced-motion'], [data-a11y~='reduced-motion']) { --a11y-motion: on; --motion: 0; }
+:is([a11y~='high-contrast'],  [data-a11y~='high-contrast'])  { --a11y-contrast: on; }
+
+/* high contrast: the text turns black or white, whichever stands against the background,
+   lines lose their transparency */
+body {
+  @container style(--a11y-contrast: on) {
+    --color-fg : oklch(from var(--color-bg) clamp(0, (0.6 - l) * 1000, 1) 0 0);
+    --line     : currentColor;
+  }
 }
 
 /*//////////// GEOMETRY ////////////*/
