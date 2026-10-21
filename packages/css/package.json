@@ -2,8 +2,8 @@
   "name"        : "@gestalt/css",
   "version"     : "0.1.0",
   "description" : "the css of gestalt: reset, functions, tokens, palettes, layouts, skins, animations",
-  "style"       : "./aufbau.css",
-  "exports"     : { ".": "./aufbau.css", "./*": "./*" },
+  "style"       : "./gestalt.css",
+  "exports"     : { ".": "./gestalt.css", "./min": "./gestalt.min.css", "./*": "./*" },
   "sideEffects" : ["*.css"],
   "license"     : "MIT"
 }

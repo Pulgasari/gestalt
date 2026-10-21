@@ -1,7 +1,8 @@
 // transform.js
 
-import filters  from '@gestalt/filters';
-import patterns from '@gestalt/patterns';
+import filters        from '@gestalt/filters';
+import patterns       from '@gestalt/patterns';
+import { compileCSS } from '@gestalt/shorthands';
 
 /*
 gestalt-anweisungen können kommen von
@@ -11,27 +12,6 @@ gestalt-anweisungen können kommen von
 
 und teilweise transformieren sie code teilweise  nich
 */
-
-function transform (code) {
-  code.replace(/#soviet/g, '#ff0000');
-  return code;
-}
-
-function processFilterRule  (rule, target = 'body') {
-  // body { gestalt-filter: glitch-live animate[true] speed[2s]; }
-  // <body gestalt-filter="glitch-live animate[true] speed[2s]">
-  // <body data-gestalt-filter="glitch-live animate[true] speed[2s]">
-  // hier kommt an: glitch-live animate[true] speed[2s]
-  filters.apply(target, 'glitch-live', { animate: true, speed: '2s' });
-}
-function processPatternRule () {}
-
-export { transform };
-export default transform;
-
-
-
-
 
 /**
  * Parses a Gestalt directive string into a name and options object.
@@ -74,6 +54,9 @@ function transform(code) {
 
   // 1. Direct macro replacement
   let transformed = code.replace(/#soviet/g, '#ff0000');
+
+  // shorthand groups (gestalt-typo, gestalt-flow, …) become real declarations
+  transformed = compileCSS(transformed);
 
   // 2. Extract and strip 'gestalt-filter' rules from CSS
   transformed = transformed.replace(filterRuleRegex, (fullMatch, selector, body, directive) => {

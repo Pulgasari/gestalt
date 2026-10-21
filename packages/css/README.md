@@ -9,7 +9,6 @@ gestalt.css     the axes as tokens (palette, scheme, density, geometry …)
 palettes.css    the palette presets
 themes.css
 animate/
-engine/
 layouts/
 skins/
 ```

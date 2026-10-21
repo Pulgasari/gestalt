@@ -4,7 +4,7 @@ web: https://aufbau.dev/webfonts/
 
 the handpicked font collection. a font is loaded through the FontFace api and
 applied as a custom property, so css decides where it is used. the catalogue is
-`data.js`, generated from `handpicked.txt` (`npm run generate:webfonts`).
+`data.js`, generated from `handpicked.txt` by ci (`.github/workflows/webfonts.yml`).
 
 ## api
 

@@ -1,0 +1,39 @@
+name: Publish @gestalt-Package to JSR
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: "package to publish"
+        required: true
+        type: choice
+        # only packages with a deno.json and no unpublished imports.
+        # core needs @domina/* on jsr first; css and the runtime sketch (gestalt) have no deno.json
+        options:
+          - filters
+          - patterns
+          - shorthands
+          - webfonts
+      dry_run:
+        description: "Only check, publish nothing"
+        type: boolean
+        default: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write # OIDC token JSR uses for auth + provenance
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: denoland/setup-deno@v2
+        with:
+          deno-version: v2.x
+
+      - name: Publish package
+        working-directory: packages/${{ inputs.package }}
+        run: deno publish ${{ inputs.dry_run && '--dry-run' || '' }}

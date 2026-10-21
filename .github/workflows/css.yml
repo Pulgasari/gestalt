@@ -1,0 +1,51 @@
+name: Bundle CSS
+
+# builds the css bundles listed in .github/config.js (see .github/scripts/css.mjs).
+#
+# debounced: every push waits 7 minutes before it builds. a newer push in that time
+# cancels the waiting run (concurrency, cancel-in-progress), so only the last push of a
+# series builds. the commit made here uses GITHUB_TOKEN, which starts no new workflow run.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'packages/**/*.css'
+      - '.github/config.js'
+      - '.github/scripts/css.mjs'
+  workflow_dispatch:
+
+concurrency:
+  group: css-bundle
+  cancel-in-progress: true
+
+jobs:
+  bundle:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Wait for the last change
+        if: github.event_name == 'push'
+        run: sleep 420
+
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Bundle
+        run: node .github/scripts/css.mjs
+
+      - name: Commit
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A packages
+          git diff --cached --quiet && exit 0
+          git commit -m 'css: rebuild bundles'
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

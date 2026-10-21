@@ -45,6 +45,10 @@ unnötig?
 </app-root>
 ```
 
+```html
+<div gestalt='typo: bold uppercase;' />
+```
+
 ## js
 
 the intended way is to use it as prototypes extension so there is a `.gestalt` namespace under every dom-element/node.
@@ -55,9 +59,6 @@ import '@gestalt/prototypes'
 
 ```js
 element.gestalt.typo = '"Rubik Sans" uppercase italic 20px justify';
-element.gestalt['typo']('"Rubik Sans" uppercase italic 20px justify');
-element.gestalt['typo']('Rubik Sans', 'uppercase', 'italic', '20px', 'justify');
-element.gestalt['typo']('Rubik Sans', 'uppercase', 'italic', [20, 'px'], 'justify');
 ```
 
 on the global `gestalt` namespace one could set the base ...
