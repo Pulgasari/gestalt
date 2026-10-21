@@ -1,0 +1,13 @@
+{
+  "name"        : "@gestalt/shorthands",
+  "version"     : "0.1.0",
+  "description" : "shorthand values (typo, flow, …) compiled to css: attributes, element.gestalt, css text",
+  "type"        : "module",
+  "types"       : "./index.d.ts",
+  "exports"     : {
+    "."         : "./index.js",
+    "./element" : "./element.js"
+  },
+  "sideEffects" : ["./element.js"],
+  "license"     : "MIT"
+}
