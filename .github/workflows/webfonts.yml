@@ -1,0 +1,47 @@
+name: Generate webfonts
+
+# rebuilds packages/webfonts/data.js and the font files from handpicked.txt
+# (see .github/scripts/webfonts.mjs). the commit made here uses GITHUB_TOKEN,
+# which starts no new workflow run.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'packages/webfonts/handpicked.txt'
+      - '.github/scripts/webfonts.mjs'
+  workflow_dispatch:
+    inputs:
+      remote:
+        description: "no download, link jsdelivr urls instead"
+        type: boolean
+        default: false
+
+concurrency:
+  group: webfonts
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Generate
+        run: node .github/scripts/webfonts.mjs ${{ inputs.remote && '--remote' || '' }}
+
+      - name: Commit
+        run: |
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A packages/webfonts
+          git diff --cached --quiet && exit 0
+          git commit -m 'webfonts: regenerate data.js and files from handpicked.txt'
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

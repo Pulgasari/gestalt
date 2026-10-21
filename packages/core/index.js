@@ -35,7 +35,7 @@ const current = {};
 
 //
 const setSkin       = async name => (await import('@domina/element')).setSkin(name || null);
-const domina        =       name => import(`@domina/methods/${name}.js`).then(module => module[name] ?? module.default);
+const domina        =       name => import(`@domina/verbs/${name}.js`).then(module => module[name] ?? module.default);
 const readToken     =       name => getComputedStyle(document.documentElement).getPropertyValue(`--${name}`).trim() || null;
 const presetPattern =       prop => new RegExp(`style\\(\\s*--${prop}\\s*:\\s*([\\w-]+)\\s*\\)`);
 

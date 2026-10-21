@@ -1,0 +1,10 @@
+{
+  "name": "@gestalt/shorthands",
+  "version": "0.1.0",
+  "license": "MIT",
+  "compilerOptions": { "lib": ["dom", "dom.iterable", "esnext"] },
+  "exports": {
+    ".": "./index.js",
+    "./element": "./element.js"
+  }
+}
