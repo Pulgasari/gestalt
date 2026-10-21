@@ -9,6 +9,7 @@
 @import url('./animate/functions.css');
 @import url('./animate/keyframes.css');
 @import url('./animate/animations.css');
+@import url('./layouts/landing.css');
 @import url('./shorthands/typo.css') layer(aufbau.utilities);
 
 /*
