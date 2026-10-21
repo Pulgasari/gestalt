@@ -2,8 +2,7 @@
 
 // Core CSS transformation function
 function transform (code) {
-  code.replace(/#soviet/g, '#ff0000');
-  return code;
+  return code.replace(/#soviet/g, '#ff0000');
 }
 
 // Process all matching style tags synchronously
@@ -11,7 +10,7 @@ function processInlineStyles() {
   const nodes = document.querySelectorAll('style');
         
   nodes.forEach(node => {
-    const code = transform(styleTag.textContent);
+    const code = transform(node.textContent);
             
     const newStyle = document.createElement('style');
     newStyle.textContent = code;

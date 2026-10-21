@@ -7,11 +7,12 @@ on:
         description: "package to publish"
         required: true
         type: choice
+        # only packages with a deno.json and no unpublished imports.
+        # core needs @domina/* on jsr first; css and the runtime sketch (gestalt) have no deno.json
         options:
-          - css
           - filters
-          - gestalt
           - patterns
+          - shorthands
           - webfonts
       dry_run:
         description: "Only check, publish nothing"

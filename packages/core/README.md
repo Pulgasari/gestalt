@@ -21,8 +21,7 @@ await gestalt.palettes();   // the preset names of palettes.css
 |---------------|------------|
 | `index.js`    | the controller |
 | `animate/`    | the js over the animations (`data-animate`) |
-| `engine/`     | experimental, do not use |
 
 the stylesheets it sets and reads (`gestalt.css`, `palettes.css`, `themes.css`, `skins/`,
-`layouts/`, `animate/*.css`, `engine/*.css`) are [`@gestalt/css`](../css). `CSS_PATH` and
+`layouts/`, `animate/*.css`) are [`@gestalt/css`](../css). `CSS_PATH` and
 `GESTALT_PATH` point there.
