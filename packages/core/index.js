@@ -106,7 +106,7 @@ const palettes = () => presetNames('palettes.css', 'palette');
 /** sets any of palette, mode, theme, density, geometry, layout, look and skin. resolves once the stylesheets are in */
 async function set (values = {}) {
   // data-* on the app root, when there is one. false or null removes it
-  const $app = document.querySelector('app-root') ?? document.querySelector('#app');
+  const $app = document.querySelector('rat-app, app-root') ?? document.querySelector('#app');
   for (const key of ATTRS) {
     if (!$app || !(key in values)) continue;
     if (values[key] === false || values[key] == null) delete $app.dataset[key];
