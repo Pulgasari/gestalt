@@ -1,0 +1,13 @@
+{
+  "name"        : "@gestalt/postcss",
+  "version"     : "0.1.0",
+  "description" : "gestalt in a build: its directives as plain css, css custom functions written out for browsers without them",
+  "type"        : "module",
+  "types"       : "./index.d.ts",
+  "exports"     : {
+    "."             : "./index.js",
+    "./functions"   : "./functions.js"
+  },
+  "peerDependencies" : { "postcss": "^8.4.0" },
+  "license"     : "MIT"
+}
