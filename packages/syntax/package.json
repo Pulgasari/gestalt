@@ -1,0 +1,12 @@
+{
+  "name"        : "@gestalt/syntax",
+  "version"     : "0.1.0",
+  "description" : "gestalt's additions to css (@spread, @val, @mixin and @apply) compiled to plain css, no dependencies",
+  "type"        : "module",
+  "types"       : "./index.d.ts",
+  "exports"     : {
+    "."        : "./index.js",
+    "./parse"  : "./parse.js"
+  },
+  "license"     : "MIT"
+}
