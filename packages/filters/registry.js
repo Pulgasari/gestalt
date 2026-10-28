@@ -1,12 +1,12 @@
-// @gestalt/filters/lib/registry.js
+// @gestalt/filters/registry.js
 // lazy filter registry. static metadata (id, name, vars, backends) comes from
-// ../manifest.js — one cheap file — while each filter's render/css/canvas/webgl
-// implementation loads on demand from ./<id>.js and is cached. this is why the
+// ./manifest.js — one cheap file — while each filter's render/css/canvas/webgl
+// implementation loads on demand from ./lib/<id>.js and is cached. this is why the
 // render path (filterSvg/applyFilter/filterCanvas/…) is async: importing the
 // barrel, listing the catalogue or probing backends no longer pulls in every
 // implementation module.
 
-import { manifest } from '../manifest.js';
+import { manifest } from './manifest.js';
 
 export { manifest };
 
@@ -26,7 +26,7 @@ const loaded = new Map();
 export function load (id) {
   metaOf(id); // validate before importing
   if (!loaded.has(id)) {
-    loaded.set(id, import(`./${id}.js`).then(m => ({
+    loaded.set(id, import(`./lib/${id}.js`).then(m => ({
       id     : m.id,
       name   : m.name,
       vars   : m.vars,

@@ -15,7 +15,7 @@
 // next filter, and only the final pass touches the screen. dom/gl is only used at call time
 // (node-safe import). the gl canvas, program cache and targets are reused across calls.
 
-import { load } from './lib/registry.js';
+import { load } from './registry.js';
 
 const VERTEX = `attribute vec2 aPos; varying vec2 vUv;
 void main () { vUv = aPos * 0.5 + 0.5; gl_Position = vec4(aPos, 0.0, 1.0); }`;

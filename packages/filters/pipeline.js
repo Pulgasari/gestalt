@@ -12,7 +12,7 @@
 
 import { filterToCanvas } from './canvas.js';
 import { filterChainWebgl } from './webgl.js';
-import { manifest } from './lib/registry.js';
+import { manifest } from './registry.js';
 
 // a stage runs on the gpu exactly when filterToCanvas would delegate to webgl: it has a
 // webgl backend and no imageData/css/svg backend to take precedence. read from the
