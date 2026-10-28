@@ -1,31 +1,7 @@
 // @gestalt/syntax
 // @ts-self-types="./index.d.ts"
 
-/*
-gestalt's few additions to css, compiled to plain css. only they are replaced, the rest stays the text
-it was (comments, nesting, formatting): a superset of css.
-
-  @spread --gap, --pad {                  the properties over selectors, a line per value:
-    normal : .menu, .panel, .player;        .menu, .panel, .player { --gap: normal; --pad: normal; }
-    small  : .row;                          .row { --gap: small; --pad: small; }
-  }
-
-  .button {
-    @val red   : border-color, color;     a value over properties: border-color: red; color: red;
-    @val unset : margin, padding;
-  }
-
-  @mixin --vert {                         a block to reuse, as the css mixins draft writes it
-    display: flex; flex-flow: column;
-  }
-  .menu { @apply --vert; @apply .bold; }  its body in place. a class is a mixin too: the first rule
-                                          that is exactly that class
-
-  compile(css) -> css
-
-properties in @val and @spread are split at commas or spaces. a mixin may @apply others, a cycle is
-dropped. definitions are found in the whole text, before or after their use. no parameters for mixins.
-*/
+// :::::: IMPORT
 
 import { colonIn, parse } from './parse.js';
 
