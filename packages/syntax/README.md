@@ -1,7 +1,6 @@
 # @gestalt/syntax
 
-status: v0. gestalt's few additions to css, compiled to plain css. only they are replaced, the rest stays the
-text it was: comments, nesting, formatting. no dependencies, the same code in a page and in a build.
+status: v0. gestalt's few additions to css, compiled to plain css. only they are replaced, the rest stays the.text it was: comments, nesting, formatting. no dependencies, the same code in a page and in a build.
 
 ```js
 import { compile } from '@gestalt/syntax';
@@ -52,8 +51,7 @@ inside a rule, where a line would otherwise be property : value:
 
 ## `@mixin` and `@apply`
 
-as the css mixins draft writes them: a block with a `--name`, its body where `@apply` names it. a rule that is
-exactly one class is a mixin too (the first of that name).
+as the css mixins draft writes them: a block with a `--name`, its body where `@apply` names it. a rule that is.exactly one class is a mixin too (the first of that name).
 
 ```css
 @mixin --vert {
@@ -86,3 +84,30 @@ properties in `@val` and `@spread` are split at commas or spaces.
 
 - **a build:** `@gestalt/postcss` compiles it first, in every `.css` file and every `<style>` of a rat component
 - **rat without a build:** `<style lang="gestalt">`
+
+---
+
+gestalt's few additions to css, compiled to plain css. only they are replaced, the rest stays the text it was (comments, nesting, formatting): a superset of css.
+
+```css
+  @spread --gap, --pad { /*the properties over selectors, a line per value: */
+    normal : .menu, .panel, .player;        .menu, .panel, .player { --gap: normal; --pad: normal; }
+    small  : .row;                          .row { --gap: small; --pad: small; }
+  }
+
+  .button {
+    @val red   : border-color, color;     a value over properties: border-color: red; color: red;
+    @val unset : margin, padding;
+  }
+
+  @mixin --vert {                         a block to reuse, as the css mixins draft writes it
+    display: flex; flex-flow: column;
+  }
+  .menu { @apply --vert; @apply .bold; }  its body in place. a class is a mixin too: the first rule
+```
+
+```js
+compile(css) -> css
+```
+
+properties in @val and @spread are split at commas or spaces. a mixin may @apply others, a cycle is.dropped. definitions are found in the whole text, before or after their use. no parameters for mixins.
