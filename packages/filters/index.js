@@ -18,7 +18,7 @@
 // only work on a <canvas>, see canvas() and createPipeline().
 
 import { PREFIX, defsHost, svgId, toElements } from './core.js';
-import { backendsOf, load, manifest, metaOf }  from './lib/registry.js';
+import { backendsOf, load, manifest, metaOf }  from './registry.js';
 import { filterToCanvas }                      from './canvas.js';
 import { filterChainWebgl, filterToWebgl }     from './webgl.js';
 import { createPipeline }                      from './pipeline.js';

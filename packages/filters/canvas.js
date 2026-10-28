@@ -8,7 +8,7 @@
 // dom is only touched at call time, so this stays safe to import in node.
 
 import { defsHost, svgId } from './core.js';
-import { load } from './lib/registry.js';
+import { load } from './registry.js';
 import { filterToWebgl } from './webgl.js';
 
 // djb2, base36 — a short stable key per option set.

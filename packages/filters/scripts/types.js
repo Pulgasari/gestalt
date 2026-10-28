@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 
 const here   = dirname(fileURLToPath(import.meta.url));
 const libDir = join(here, '..', 'lib');
-const files  = readdirSync(libDir).filter(file => file.endsWith('.js') && file !== 'registry.js').sort();
+const files  = readdirSync(libDir).filter(file => file.endsWith('.js')).sort();
 
 const TS = { angle: 'number', boolean: 'boolean', color: 'string', duration: 'string', integer: 'number', number: 'number', text: 'string' };
 
