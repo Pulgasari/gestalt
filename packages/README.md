@@ -1,5 +1,7 @@
 # gestalt :: packages
 
+## base
+
 | package            |                  | status |
 |--------------------|------------------|--------|
 | `@gestalt/core`    | [`dir`](core)    | v0     |
